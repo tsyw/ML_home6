@@ -33,7 +33,7 @@ cuda = True
 #torch.cuda.manual_seed(seed)
 embeddings, vertex_features, train_data, valid_data, test_data = load_data(64)
 epochs = 50
-batch_size = 2048
+batch_size = 4096
 embeddings = torch.FloatTensor(embeddings)
 vertex_features = torch.FloatTensor(vertex_features)
 
@@ -52,7 +52,6 @@ def find_list(indices, data):
     out = []
     for i in indices:
         out = out + [data[i]]
-        print()
     return np.array(out)
 
 def batch_loader(data):
@@ -81,11 +80,11 @@ acquire the corresponding vertex features and embeddings of an instance.
 n_classes = 2
 class_weight = train_graphs.shape[0]/(n_classes * np.bincount(train_labels))
 class_weight = torch.FloatTensor(class_weight)
-hidden_units = 32,32
+hidden_units = 128,128
 feature_dim = train_inf_features.shape[-1]
 n_units = [feature_dim] + [x for x in hidden_units] + [n_classes]
 
-model = BatchGCN(pretrained_emb=embeddings, vertex_feature=vertex_features, use_vertex_feature=True, n_units=n_units, dropout=0.2)
+model = BatchGCN(pretrained_emb=embeddings, vertex_feature=vertex_features, use_vertex_feature=True, n_units=n_units, dropout=0.2,instance_normalization=True)
 
 model.cuda()
 class_weight = class_weight.cuda()
@@ -130,7 +129,7 @@ def evaluate(epoch, loader, thr=None, return_best_thr=False):
 
     prec, rec, f1, _ = precision_recall_fscore_support(y_true, y_pred, average="binary")
     auc = roc_auc_score(y_true, y_score)
-    print("%sloss: %.4f AUC: %.4f Prec: %.4f Rec: %.4f F1: %.4f" % (loss/total, auc, prec, rec, f1))
+    print("loss: %.4f AUC: %.4f Prec: %.4f Rec: %.4f F1: %.4f" % (loss/total, auc, prec, rec, f1))
     if return_best_thr:
         precs, recs, thrs = precision_recall_curve(y_true, y_score)
         f1s = 2 * precs * recs / (precs + recs)
@@ -171,9 +170,9 @@ def train(epoch, train_loader, valid_loader, test_loader):
         optimizer.step()
         if bs < batch_size:
             break
-    print("train loss in this epoch %f", loss/total)
+    print("train loss in this epoch %.4f" % (loss/total))
     if (epoch + 1) % 10 == 0:
-        print("epoch %d, checkpoint!", epoch)
+        print("epoch %d, checkpoint!" %(epoch))
         best_thr = evaluate(epoch, valid_loader, return_best_thr=True)
         evaluate(epoch, test_loader, thr=best_thr)
 
@@ -182,7 +181,7 @@ def train(epoch, train_loader, valid_loader, test_loader):
 t_total = time.time()
 for epoch in range(epochs):
     train(epoch, train_data, valid_data, test_data)
-
+# epoch 1: loss/total
 print("optimization Finished")
 
 best_thr = evaluate(epochs, valid_data, return_best_thr=True)
