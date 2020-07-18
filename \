@@ -10,8 +10,6 @@ from torch.utils.data import DataLoader
 from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import precision_recall_curve
-torch.backends.cudnn.enabled = True
-torch.backends.cudnn.benchmark = True
 
 """
  |V|: total number of nodes of the social network
@@ -35,7 +33,7 @@ cuda = True
 #torch.cuda.manual_seed(seed)
 embeddings, vertex_features, train_data, valid_data, test_data = load_data(64)
 epochs = 100
-batch_size = 1024
+batch_size = 8192
 embeddings = torch.FloatTensor(embeddings)
 vertex_features = torch.FloatTensor(vertex_features)
 
