@@ -7,9 +7,9 @@ python example.py > rungcnlog.txt
 
 Dataloader:采用老师提供的代码util.py
 
-算法：采用GCN，使用了论文提供的代码
+算法：采用GCN，使用了论文提供的代码（gcn和gcnlayer）
 
-batch读取：自己实现
+batch读取和优化：自己实现
 
 我的结果是loss: 0.5910 AUC: 0.7584 Prec: 0.4088 Rec: 0.7359 F1: 0.5256
 
