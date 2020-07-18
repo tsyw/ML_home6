@@ -23,3 +23,7 @@ python examplegat.py > rungatlog.txt
 ```
 
 目前的结果是（50个epoch）loss: 0.5114 AUC: 0.8205 Prec: 0.4847 Rec: 0.7300 F1: 0.5826
+
+500个epoch，loss: 0.5035 AUC: 0.8262 Prec: 0.4867 Rec: 0.7465 F1: 0.5892
+
+TODO:Ensemble
