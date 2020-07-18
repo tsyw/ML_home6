@@ -1,0 +1,83 @@
+torch.Size([1784073, 7])
+torch.Size([1784024, 64])
+(584373, 50, 50)
+(584373, 50)
+(584373, 50, 2)
+(584373,)
+train loss in this epoch 1.0925
+train loss in this epoch 0.5656
+train loss in this epoch 0.5544
+train loss in this epoch 0.5477
+train loss in this epoch 0.5422
+train loss in this epoch 0.5384
+train loss in this epoch 0.5357
+train loss in this epoch 0.5336
+train loss in this epoch 0.5319
+train loss in this epoch 0.5307
+epoch 9, checkpoint!
+loss: 0.5330 AUC: 0.8042 Prec: 0.4675 Rec: 0.7212 F1: 0.5673
+best threshold = -0.677346, f1 = 0.5681
+using threshold -0.6773
+loss: 0.5326 AUC: 0.8044 Prec: 0.4707 Rec: 0.7105 F1: 0.5663
+train loss in this epoch 0.5297
+train loss in this epoch 0.5284
+train loss in this epoch 0.5279
+train loss in this epoch 0.5270
+train loss in this epoch 0.5264
+train loss in this epoch 0.5259
+train loss in this epoch 0.5256
+train loss in this epoch 0.5247
+train loss in this epoch 0.5244
+train loss in this epoch 0.5238
+epoch 19, checkpoint!
+loss: 0.5268 AUC: 0.8086 Prec: 0.4689 Rec: 0.7359 F1: 0.5728
+best threshold = -0.657355, f1 = 0.5735
+using threshold -0.6574
+loss: 0.5259 AUC: 0.8093 Prec: 0.4774 Rec: 0.7129 F1: 0.5718
+train loss in this epoch 0.5232
+train loss in this epoch 0.5226
+train loss in this epoch 0.5218
+train loss in this epoch 0.5211
+train loss in this epoch 0.5208
+train loss in this epoch 0.5200
+train loss in this epoch 0.5195
+train loss in this epoch 0.5182
+train loss in this epoch 0.5172
+train loss in this epoch 0.5162
+epoch 29, checkpoint!
+loss: 0.5204 AUC: 0.8139 Prec: 0.4748 Rec: 0.7339 F1: 0.5766
+best threshold = -0.703496, f1 = 0.5770
+using threshold -0.7035
+loss: 0.5192 AUC: 0.8150 Prec: 0.4710 Rec: 0.7410 F1: 0.5760
+train loss in this epoch 0.5153
+train loss in this epoch 0.5140
+train loss in this epoch 0.5130
+train loss in this epoch 0.5122
+train loss in this epoch 0.5117
+train loss in this epoch 0.5108
+train loss in this epoch 0.5107
+train loss in this epoch 0.5103
+train loss in this epoch 0.5098
+train loss in this epoch 0.5097
+epoch 39, checkpoint!
+loss: 0.5140 AUC: 0.8185 Prec: 0.4774 Rec: 0.7399 F1: 0.5804
+best threshold = -0.660533, f1 = 0.5818
+using threshold -0.6605
+loss: 0.5128 AUC: 0.8198 Prec: 0.4872 Rec: 0.7189 F1: 0.5808
+train loss in this epoch 0.5093
+train loss in this epoch 0.5089
+train loss in this epoch 0.5088
+train loss in this epoch 0.5087
+train loss in this epoch 0.5084
+train loss in this epoch 0.5082
+train loss in this epoch 0.5080
+train loss in this epoch 0.5078
+train loss in this epoch 0.5078
+train loss in this epoch 0.5077
+epoch 49, checkpoint!
+loss: 0.5124 AUC: 0.8193 Prec: 0.4762 Rec: 0.7458 F1: 0.5812
+best threshold = -0.665658, f1 = 0.5827
+using threshold -0.6657
+loss: 0.5114 AUC: 0.8205 Prec: 0.4847 Rec: 0.7300 F1: 0.5826
+train loss in this epoch 0.5074
+train loss in this epoch 0.5073
