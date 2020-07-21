@@ -28,4 +28,4 @@ python examplegat.py > rungatlog.txt
 
 500个epoch，loss: 0.5035 AUC: 0.8262 Prec: 0.4867 Rec: 0.7465 F1: 0.5892
 
-TODO:Ensemble
+TODO:通过 Ensemble 提升跑分
