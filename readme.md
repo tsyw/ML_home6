@@ -1,5 +1,7 @@
 复现 https://arxiv.org/abs/1807.05560 中的GCN和GAT算法
+
 Dependencies：pytorch,scikit-learn,cudatoolkit-10.2
+
 # GCN and GAT 
 ## GCN
 instruction:
