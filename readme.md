@@ -1,3 +1,5 @@
+复现 https://arxiv.org/abs/1807.05560 中的GCN和GAT算法
+Dependencies：pytorch,scikit-learn,cudatoolkit-10.2
 # GCN and GAT 
 ## GCN
 instruction:
@@ -5,7 +7,7 @@ instruction:
 python example.py > rungcnlog.txt
 ```
 
-Dataloader:采用老师提供的代码util.py
+Dataloader:采用提供的代码util.py
 
 算法：采用GCN，使用了论文提供的代码（gcn和gcnlayer）
 
